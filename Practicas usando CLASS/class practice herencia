@@ -1,0 +1,47 @@
+class Persona{
+  constructor(nombre,edad){
+    this.nombre=nombre;
+    this.edad=edad;
+  }
+  presentarse(){
+    console.log(`Soy ${this.nombre}, tengo ${this.edad} años.`);
+  }
+  trabajar(){
+    console.log(`Estoy ocupado.`)
+  }
+
+  
+}
+class Estudiante extends Persona {
+  constructor(nombre,edad,materiaFavorita){
+    super(nombre,edad)
+    this.materiaFavorita=materiaFavorita;
+  }
+  presentarse(){
+    console.log(`Soy ${this.nombre}, tengo ${this.edad} años y mi materia favorita es ${this.materiaFavorita}`);
+  }
+   trabajar(){
+    console.log(`Estoy estudiando.`)
+  }
+}
+class Profesor extends Persona {
+  constructor(nombre,edad,materiaQueEnseña){
+  super(nombre,edad)
+  
+  this.materiaQueEnseña=materiaQueEnseña;
+  }
+
+  presentarse(){
+     console.log(`Soy ${this.nombre}, tengo ${this.edad} años y  enseño ${this.materiaQueEnseña}`);
+  }
+   trabajar(){
+    console.log(`Estoy enseñando.`)
+  }
+} 
+let std1= new Persona('Kenneth', 19);
+std1.presentarse();
+let std2= new Estudiante('Abraham', 20, 'Computacion');
+std2.presentarse();
+let teacher1= new Profesor('Kenneth', 19, 'Computacion');
+teacher1.presentarse();
+teacher1.trabajar();
